@@ -1,0 +1,30 @@
+<nav id="header" class="navbar navbar-expand-sm navbar-dark fixed-top">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <h1 class="logo me-auto"><img src="assets/img/logo1.png" style="height:40px; width:100px;" alt="w3docs logo"></h1>
+      <div id="menu">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+          <li *ngIf="!auth.loggedIn()" class="nav-item"><a class="nav-link scrollto active" href="">HOME</a></li>
+          <li *ngIf="!auth.loggedIn()" class="nav-item"><a class="nav-link scrollto active" routerLink="/login"  >LOGIN</a></li>
+          <li *ngIf="!auth.loggedIn()" class="nav-item"><a class="nav-link scrollto active" routerLink="/signup">SIGNUP</a></li>
+          <li  *ngIf="auth.loggedIn()" class="nav-item"><a class="nav-link scrollto active" (click)="logoutUser()"  routerLink="/signup">LOGOUT</a></li>
+       </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+<br>
+<!-- <div class="modal modal-xl fade text-center" id="exampleModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    </div>
+  </div>
+</div> -->
+
+
+
