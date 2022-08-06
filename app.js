@@ -23,7 +23,7 @@ const dotenv = require("dotenv");
 const app = new express();
 const port = 4000;
 
-dotenv.config();
+dotenv.config({ path: '.env' })
 app.use(cors());
 app.use(express.static('./dist/frontend'))
 app.use(express.json({limit: '50mb'}));
