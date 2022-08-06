@@ -21,7 +21,7 @@ const dotenv = require("dotenv");
 
 // const { sign } = require("crypto");
 const app = new express();
-const port = 4000;
+const port = process.env.PORT||3000;
 
 dotenv.config({ path: '.env' })
 app.use(cors());
@@ -95,13 +95,12 @@ req.userId=payload.subject;
 
 next()
 }
-
-mongoose.connect(process.env.DATABASE_URL, {
-  useNewUrlParser: true,
+const db='mongodb+srv://Resume_Builder:resume123@cluster0.uq5mq.mongodb.net/Resume_Builder?retryWrites=true&w=majority'
+mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true}).then(()=>{
+ console.log("Database Connection Successful")
+}).catch((err)=>{
+ console.log(err)
 })
-  .then(() => console.log("MongoDB Connected..."))
-  .catch(err => console.log(err));
-
 // requiring routes
 
 
