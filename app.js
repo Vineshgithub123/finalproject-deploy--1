@@ -506,10 +506,8 @@ signup.findByIdAndRemove({"_id":id })
 })
 })
 
-app.get('/*', function(req, res)  {
-    res.sendFile(path.join(__dirname + '/dist//frontend/index.html'))
-})
-
+app.get("/*", (req, res)=> {
+  res.sendFile(path.join(__dirname + '/dist//frontend/index.html'))})
 
 
 
